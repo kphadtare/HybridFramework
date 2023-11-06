@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-11-06T19:09:27 IST" name="Suite" finished-at="2023-11-06T19:09:30 IST" duration-ms="2635">
+    <groups>
+    </groups>
+    <test started-at="2023-11-06T19:09:27 IST" name="Test" finished-at="2023-11-06T19:09:30 IST" duration-ms="2635">
+      <class name="testCases.APITest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testCases.APITest@f6c03cb]" started-at="2023-11-06T19:09:28 IST" name="beforeMethod" finished-at="2023-11-06T19:09:28 IST" duration-ms="341" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="addBookTest(java.util.Map)[pri:1, instance:testCases.APITest@f6c03cb]" started-at="2023-11-06T19:09:28 IST" name="addBookTest" description="Add book api test" data-provider="getAPIData" finished-at="2023-11-06T19:09:29 IST" duration-ms="1499" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{expectedStatusCode=200, successMessage=successfully added}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addBookTest -->
+        <test-method is-config="true" signature="afterMethode(org.testng.ITestResult)[pri:0, instance:testCases.APITest@f6c03cb]" started-at="2023-11-06T19:09:29 IST" name="afterMethode" finished-at="2023-11-06T19:09:29 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=addBookTest status=SUCCESS method=APITest.addBookTest(java.util.Map)[pri:1, instance:testCases.APITest@f6c03cb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethode -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testCases.APITest@f6c03cb]" started-at="2023-11-06T19:09:29 IST" name="beforeMethod" finished-at="2023-11-06T19:09:29 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="getBookByID(java.util.Map)[pri:2, instance:testCases.APITest@f6c03cb]" started-at="2023-11-06T19:09:29 IST" name="getBookByID" description="Get book api test" data-provider="getAPIData" finished-at="2023-11-06T19:09:30 IST" duration-ms="129" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{book_name=[Learn Appium Automation with Java]}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getBookByID -->
+        <test-method is-config="true" signature="afterMethode(org.testng.ITestResult)[pri:0, instance:testCases.APITest@f6c03cb]" started-at="2023-11-06T19:09:30 IST" name="afterMethode" finished-at="2023-11-06T19:09:30 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=getBookByID status=SUCCESS method=APITest.getBookByID(java.util.Map)[pri:2, instance:testCases.APITest@f6c03cb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethode -->
+        <test-method signature="DeleteBook(java.util.Map)[pri:3, instance:testCases.APITest@f6c03cb]" started-at="2023-11-06T19:09:30 IST" name="DeleteBook" description="Delete book api test" data-provider="getAPIData" finished-at="2023-11-06T19:09:30 IST" duration-ms="99" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{deleteSuccessMsg=book is successfully deleted}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DeleteBook -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testCases.APITest@f6c03cb]" started-at="2023-11-06T19:09:30 IST" name="beforeMethod" finished-at="2023-11-06T19:09:30 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="afterMethode(org.testng.ITestResult)[pri:0, instance:testCases.APITest@f6c03cb]" started-at="2023-11-06T19:09:30 IST" name="afterMethode" finished-at="2023-11-06T19:09:30 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=DeleteBook status=SUCCESS method=APITest.DeleteBook(java.util.Map)[pri:3, instance:testCases.APITest@f6c03cb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethode -->
+      </class> <!-- testCases.APITest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
