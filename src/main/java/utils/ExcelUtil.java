@@ -94,5 +94,15 @@ public class ExcelUtil {
 	         LinkedHashMap<String, String> uiData = ExcelUtil.readExcelSheetUI(testCaseName,env_DataFile); 
 	         return new Object[][] {{uiData}};
 	     }
+	 
+	 
+	 @DataProvider(name = "getDBData", parallel = true)
+	    public static Object[][] getDBData(Method method) {
+	        String testCaseName = method.getAnnotation(Test.class).testName();
+	        System.out.println("Test name :: "+testCaseName);
+	        String env_DataFile = FrameworkConstants.EXCEL_DATA_FILE_PATH_DB.replace("$ENV$",FrameworkConstants.ENVTYPE);
+	         LinkedHashMap<String, String> uiData = ExcelUtil.readExcelSheetUI(testCaseName,env_DataFile); 
+	         return new Object[][] {{uiData}};
+	     }
 
 }

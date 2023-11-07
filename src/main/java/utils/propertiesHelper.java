@@ -14,8 +14,8 @@ public class propertiesHelper {
 		prop = new Properties();
 		FileReader file;
 		try {
-
 			String path = getProjectDir() + "/src/test/resources/config/config.properties";
+			
 			file = new FileReader(path);
 			prop.load(file);
 		} catch (FileNotFoundException e) {
@@ -39,6 +39,8 @@ public class propertiesHelper {
 	
 
 		String path =getProjectDir()+ "/src/test/resources/config/config.properties";
+		
+	//	propertiesHelper.propertyLoader("/src/test/resources/config/config.properties");
 		try {
 			file = new FileReader(path);
 			prop.load(file);

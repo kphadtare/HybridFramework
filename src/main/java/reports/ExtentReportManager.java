@@ -73,4 +73,9 @@ public class ExtentReportManager {
         }
 	}
 	
+	public static void pass(String message) {
+		//System.out.println("ExtentReportManager class: " + ExtentTestManager.getExtentTest());
+		ExtentTestManager.getExtentTest().pass(message);
+	}
+	
 }

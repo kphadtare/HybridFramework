@@ -12,8 +12,10 @@ public final class FrameworkConstants {
 	public static final String PROJECT_PATH = propertiesHelper.getProjectDir();
 
 	public static final String EXCEL_DATA_FILE_PATH_UI = propertiesHelper.getValue("EXCEL_DATA_FILE_PATH_UI");
-	public static final String API_LOG_FILE_PATH = propertiesHelper.getValue("API_Log_PATH");
 	public static final String EXCEL_DATA_FILE_PATH_API = propertiesHelper.getValue("EXCEL_DATA_FILE_PATH_API");
+	public static final String EXCEL_DATA_FILE_PATH_DB = propertiesHelper.getValue("EXCEL_DATA_FILE_PATH_DB");
+	public static final String API_LOG_FILE_PATH = propertiesHelper.getValue("API_Log_PATH");
+	
 	public static final String ENVTYPE = propertiesHelper.getValue("ENVTYPE");
 
 	public static final String EXTENT_REPORT_FOLDER = propertiesHelper.getValue("EXTENT_REPORT_FOLDER");
