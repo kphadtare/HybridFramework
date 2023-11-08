@@ -21,12 +21,17 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'test'
 
+
 - task: CopyFiles@2
   inputs:
     Contents: '**'
     TargetFolder: '$(build.artifactstagingdirectory)'
+    OverWrite: true
+    ignoreMakeDirErrors: true
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+    
