@@ -25,12 +25,7 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
-    testResultsFiles: '**/ExtentReport*.html'
+    testResultsFiles: '**/ExtentReport.html'
 
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: '$(Pipeline.Workspace)'
-    artifact: 'Report'
-    publishLocation: 'pipeline'
-  continueOnError: true 
+
     
