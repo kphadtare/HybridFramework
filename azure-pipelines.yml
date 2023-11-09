@@ -21,5 +21,10 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'test'
 
-
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: './/ExtentReports//ExtentReport.html'
+    artifact: 'Report'
+    publishLocation: 'pipeline'
+  continueOnError: true 
     
