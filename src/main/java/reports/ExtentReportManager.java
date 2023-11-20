@@ -65,7 +65,7 @@ public class ExtentReportManager {
 	
 	public static void passWithScreenshot(String message) {
 		Media build = MediaEntityBuilder.createScreenCaptureFromPath(String.valueOf(ScreenShotHelper.getScreenshot(message.replaceAll("[^a-zA-Z]+","")))).build();      
-//		ExtentTestManager.getExtentTest().pass(message,build);
+
 		if (FrameworkConstants.SCREENSHOT_ALL_STEPS_IN_EXTENT.equalsIgnoreCase("Yes")) {
 			ExtentTestManager.getExtentTest().pass(message,build);
         }else {
@@ -74,7 +74,7 @@ public class ExtentReportManager {
 	}
 	
 	public static void pass(String message) {
-		//System.out.println("ExtentReportManager class: " + ExtentTestManager.getExtentTest());
+	
 		ExtentTestManager.getExtentTest().pass(message);
 	}
 	

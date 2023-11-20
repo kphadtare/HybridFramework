@@ -11,15 +11,17 @@ public final class FrameworkConstants {
 	public static final String BROWSER = propertiesHelper.getValue("BROWSER");
 	public static final String PROJECT_PATH = propertiesHelper.getProjectDir();
 
+	//Excel Test Data files
 	public static final String EXCEL_DATA_FILE_PATH_UI = propertiesHelper.getValue("EXCEL_DATA_FILE_PATH_UI");
 	public static final String EXCEL_DATA_FILE_PATH_API = propertiesHelper.getValue("EXCEL_DATA_FILE_PATH_API");
 	public static final String EXCEL_DATA_FILE_PATH_DB = propertiesHelper.getValue("EXCEL_DATA_FILE_PATH_DB");
 	public static final String API_LOG_FILE_PATH = propertiesHelper.getValue("API_Log_PATH");
 	
+	//ENV Type
 	public static final String ENVTYPE = propertiesHelper.getValue("ENVTYPE");
 
+	//Extent Report
 	public static final String EXTENT_REPORT_FOLDER = propertiesHelper.getValue("EXTENT_REPORT_FOLDER");
-
 	public static final String EXTENT_REPORT_NAME = propertiesHelper.getValue("EXTENT_REPORT_NAME");
 	public static final String EXTENT_REPORT_FILE_NAME = EXTENT_REPORT_NAME + ".html";
 	public static final String EXTENT_REPORT_FOLDER_PATH = PROJECT_PATH + EXTENT_REPORT_FOLDER;
@@ -31,7 +33,7 @@ public final class FrameworkConstants {
 			.getValue("screenshot_all_steps_in_extent");
 	
 	
-	//API
+	//API & resources
 	public static final String baseURL= "http://216.10.245.166";
 	public static final String postRequest="Library/Addbook.php";
 	public static final String getBookRequest= "Library/GetBook.php";
