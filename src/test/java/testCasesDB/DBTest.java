@@ -44,11 +44,27 @@ public class DBTest extends baseTestDB {
 			ResultSet result = executeSelectQuery(map.get("queryToFetchPatientDetails"));
 			while(result.next()) {
 				int patientActualID =result.getInt("patient_id");
-				verifyPatientID(patientActualID, Integer.parseInt(map.get("expectedID")));
+				verifyPatientID(patientActualID, Integer.parseInt(map.get("patientID")));
 				String actualAge = result.getString("age");
 				verifyPatientAge(actualAge, map.get("expectedAge"));
 				String email = result.getString("email");
 				verifyPatientEmail(email, map.get("email"));
+				}
+			}
+			
+		//This test will execute for set of data
+		@Test(testName="TC03", description ="Verify Patient details in DB", dataProvider = "getData", dataProviderClass = ExcelUtil.class)
+		public void verifyMultiplePatientDetails(String query, String patientId, String age, String emailID) throws SQLException {
+			
+			ExtentReportManager.info("DB Test :: Verify Patient details in DB");
+			ResultSet result = executeSelectQuery(query);
+			while(result.next()) {
+				int patientActualID =result.getInt("patient_id");
+				verifyPatientID(patientActualID, Integer.parseInt(patientId));
+				String actualAge = result.getString("age");
+				verifyPatientAge(actualAge, age);
+				String email = result.getString("email");
+				verifyPatientEmail(email, emailID);
 				}
 			}
 			

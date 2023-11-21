@@ -68,7 +68,7 @@ public class Wrapper {
 
 	public boolean isDisplayed(By locator) {
 		try {
-
+           staticWait();
 			return driverFactory.getDriver().findElement(locator).isDisplayed();
 		} catch (Exception e) {
 			e.getMessage();
