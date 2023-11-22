@@ -18,6 +18,9 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import constants.FrameworkConstants;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class ScreenShotHelper {
 	static DriverFactory driverFactory;
@@ -73,6 +76,24 @@ public class ScreenShotHelper {
 		}
 		return destFile;
 	}
+	
 
+	public static String takeFullPageScreenshot(WebDriver driver, String screenshotName)  {
+		String dateName = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss.SSS").format(new Date());
+		String path = getCurrentDir() + FrameworkConstants.EXTENT_REPORT_FOLDER + File.separator + "images";
+		String filePath = path + File.separator + screenshotName + dateName + ".png";
+		   Screenshot s=new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+	       try {
+			ImageIO.write(s.getImage(),"PNG",new File(filePath));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	       File destFile=new File(filePath);
+	       System.out.println("file path is:"+filePath);
+		return destFile.getAbsolutePath();
+		
+	   
+		}
 
 }
