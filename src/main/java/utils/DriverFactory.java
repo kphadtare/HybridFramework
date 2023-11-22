@@ -30,7 +30,7 @@ public WebDriver initializeBrowser(String browser) {
 		return getDriver();
 	}
 	
-	public WebDriver getDriver() {
+	public static WebDriver getDriver() {
 		return tlDriver.get();
 	}
 

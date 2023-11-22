@@ -12,10 +12,16 @@ import java.util.Date;
 
 import javax.imageio.ImageIO;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
 import constants.FrameworkConstants;
 
 public class ScreenShotHelper {
 	static DriverFactory driverFactory;
+	
 	
 	public ScreenShotHelper() {
 		driverFactory = new DriverFactory();
@@ -51,21 +57,22 @@ public class ScreenShotHelper {
 	}
 	
 	
-//	public static File getScreenshotAs(String screenshotName) {
-//		String dateName = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss.SSS").format(new Date());
-//		TakesScreenshot srcshot = (TakesScreenshot) driverFactory.getDriver();
-//		File file = srcshot.getScreenshotAs(OutputType.FILE);
-//		String path = getCurrentDir() + FrameworkConstants.EXTENT_REPORT_FOLDER + File.separator + "images";
-//		String filePath = path + File.separator + screenshotName + dateName + ".png";
-//		File destFile = new File(filePath);
-//		try {
-//			FileUtils.copyFile(file, destFile);
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		return destFile;
-//	}
+	public static File getScreenshotAs(WebDriver driver,String screenshotName) {
+	//	WebDriver driver = driverFactory.getDriver();
+		String dateName = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss.SSS").format(new Date());
+		TakesScreenshot srcshot = (TakesScreenshot) driver;
+		File file = srcshot.getScreenshotAs(OutputType.FILE);
+		String path = getCurrentDir() + FrameworkConstants.EXTENT_REPORT_FOLDER + File.separator + "images";
+		String filePath = path + File.separator + screenshotName + dateName + ".png";
+		File destFile = new File(filePath);
+		try {
+			FileUtils.copyFile(file, destFile);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return destFile;
+	}
 
 
 }
