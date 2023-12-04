@@ -58,8 +58,10 @@ public class SauceDemoTests extends baseTest {
 		objLoginPage.clickLoginBtn();
 
 		objLoginPage.verifyErrorMessageDisplayed();
-		//objHomePage.verifyAddToCartBtnDisplayed();
+		objHomePage.verifyAddToCartBtnDisplayed();
 		ExtentReportManager.info("Verified user is not able to Login Sauce Demo with invalid Credentials");
 	}
 
+	
+	
 }

@@ -2,7 +2,10 @@ package utils;
 
 import java.io.FileInputStream;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -13,6 +16,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import constants.FrameworkConstants;
+
 
 public class ExcelUtil {
 
@@ -92,7 +96,7 @@ public class ExcelUtil {
 						try {                    
 							try {
                                   DataFormatter df = new DataFormatter();
-                                 System.out.println( df.formatCellValue(sheet.getRow(i).getCell(j)));  
+                         //        System.out.println( df.formatCellValue(sheet.getRow(i).getCell(j)));  
                              data[i][j]= df.formatCellValue(sheet.getRow(i).getCell(j));
 							} catch (NullPointerException e) {
 								e.printStackTrace();
@@ -114,6 +118,9 @@ public class ExcelUtil {
 		return data;
 
 	}
+	
+	
+
 
 	@DataProvider(name = "getUIData", parallel = true)
 	public static Object[][] getUIData(Method method) {
@@ -153,6 +160,16 @@ public class ExcelUtil {
 	}
 	
 	
+//	@DataProvider(name= "getDataNew")
+//	public static Object[][] getDataNew(Method method) {
+//		String testCaseName = method.getAnnotation(Test.class).testName();
+//		System.out.println("Test name :: " + testCaseName);
+//		String env_DataFile = FrameworkConstants.EXCEL_DATA_FILE_PATH_DB.replace("$ENV$", FrameworkConstants.ENVTYPE);
+//		 HashMap<Integer, List<String>> map = ExcelUtil.readExcelSheetUIHashMap(testCaseName, env_DataFile);
+//		//return map;
+//		return new Object[][] { { map } };
+//	}
 	
+
 
 }
