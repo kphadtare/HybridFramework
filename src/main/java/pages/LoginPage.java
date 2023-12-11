@@ -42,7 +42,7 @@ public class LoginPage {
 	}
 	
 	public void enterPassword(String password) {
-		objWrapper.sleep(1);
+		objWrapper.staticWait();
 		objWrapper.setText(inpPassword,  password);
 		logger.info("Password entered :"+ password);
 		ExtentReportManager.passWithScreenshot("Enterted password :"+ password);
