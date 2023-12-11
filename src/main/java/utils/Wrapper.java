@@ -4,22 +4,11 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 
-
-
-
-
-
-
-public class Wrapper {
-//	DriverFactory driverFactory;
-//
-//	public Wrapper() {
-//		driverFactory = new DriverFactory();
-//
-//	}
+public class Wrapper extends DriverFactory {
+	DriverFactory driverFactory;
 
 	public void staticWait() {
-		DriverFactory.getDriver().manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 	}
 
 	public static void sleep(double second) {
@@ -33,7 +22,7 @@ public class Wrapper {
 	public void clickWebElement(By locator) {
 		try {
 			staticWait();
-			DriverFactory.getDriver().findElement(locator).click();
+			driver.findElement(locator).click();
 		} catch (Exception e) {
 			System.out.println("Failed to click :" + e.getMessage());
 			Log.error("Failed to click on element :" + locator + " " + e.getMessage());
@@ -43,7 +32,7 @@ public class Wrapper {
 	public void setText(By locator, String value) {
 		try {
 			staticWait();
-			DriverFactory.getDriver().findElement(locator).sendKeys(value);
+			driver.findElement(locator).sendKeys(value);
 		} catch (Exception e) {
 			System.out.println("Failed to setText :" + e.getMessage());
 			Log.error("Failed to setText value :" + value + "in " + locator + " " + e.getMessage());
@@ -53,7 +42,7 @@ public class Wrapper {
 	public String getText(By locator) {
 		try {
 			staticWait();
-			String text = DriverFactory.getDriver().findElement(locator).getText();
+			String text = driver.findElement(locator).getText();
 			return text;
 		} catch (Exception e) {
 			System.out.println("Failed to setText :" + e.getMessage());
@@ -63,13 +52,13 @@ public class Wrapper {
 
 	public String getTitle() {
 		staticWait();
-		return DriverFactory.getDriver().getTitle();
+		return driver.getTitle();
 	}
 
 	public boolean isDisplayed(By locator) {
 		try {
-           staticWait();
-			return DriverFactory.getDriver().findElement(locator).isDisplayed();
+			staticWait();
+			return driver.findElement(locator).isDisplayed();
 		} catch (Exception e) {
 			e.getMessage();
 			Log.error("Element is not displayed :" + locator);
@@ -77,10 +66,10 @@ public class Wrapper {
 		}
 
 	}
-	
+
 //	public void extractJSONData(String response) {
 //		JsonPath js = new JsonPath(response);
 //		return js;
 //	}
-	
+
 }
